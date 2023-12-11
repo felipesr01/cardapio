@@ -24,19 +24,21 @@ export default function Home() {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins&display=swap" rel="stylesheet"/>
       </Head>
-      <Banner />
-      <Categorias />
-      <div className={styles.containerCards}>
-        {produtos.map((prato) => (
-          <Card
-            imagem={prato.imagem}
-            nome={prato.nome}
-            categoria={prato.categoria}
-            descricao={prato.descricao}
-            preco={prato.preco}
-          />
-        ))}
-      </div>
+      <body>
+        <Banner />
+        <Categorias />
+        <div className={styles.containerCards}>
+          {produtos.map((prato) => (
+            <Card
+              imagem={prato.imagem}
+              nome={prato.nome}
+              categoria={prato.categoria}
+              descricao={prato.descricao}
+              preco={prato.preco}
+            />
+          ))}
+        </div>
+      </body>
     </>
   )
 }

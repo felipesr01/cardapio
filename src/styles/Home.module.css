@@ -1,0 +1,9 @@
+.containerCards {
+    background-color: #F3F3F3;
+    padding: 20px 0px;
+    max-width: 305px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
