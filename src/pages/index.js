@@ -6,6 +6,7 @@ import { Categorias } from '@/components/Categorias'
 import { useState } from 'react'
 import Card from '@/components/Cards'
 import { produtos } from "../data/data-produtos"
+import CampoDeBusca from '@/components/CampoDeBusca'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -24,21 +25,21 @@ export default function Home() {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins&display=swap" rel="stylesheet"/>
       </Head>
-      <body>
-        <Banner />
-        <Categorias />
-        <div className={styles.containerCards}>
-          {produtos.map((prato) => (
-            <Card
-              imagem={prato.imagem}
-              nome={prato.nome}
-              categoria={prato.categoria}
-              descricao={prato.descricao}
-              preco={prato.preco}
-            />
-          ))}
-        </div>
-      </body>
+      <Banner />
+      <Categorias />
+      <CampoDeBusca />
+      <h2 className={styles.subtitulo}>Cardápio</h2>
+      <div className={styles.containerCards}>
+        {produtos.map((prato) => (
+          <Card
+            imagem={prato.imagem}
+            nome={prato.nome}
+            categoria={prato.categoria}
+            descricao={prato.descricao}
+            preco={prato.preco}
+          />
+        ))}
+      </div>
     </>
   )
 }

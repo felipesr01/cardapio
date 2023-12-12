@@ -1,9 +1,21 @@
+.subtitulo {
+    margin: 20px auto;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2em;
+    color: #DBAD39;
+}
+
 .containerCards {
     background-color: #F3F3F3;
     padding: 20px 0px;
-    max-width: 305px;
+    width: 90%;
+    max-width: 925px;
     margin: auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex: 1 1 auto;
 }

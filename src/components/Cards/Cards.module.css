@@ -1,8 +1,7 @@
 .card {
-    margin: 10px auto;
     display: flex;
     flex-direction: column;
-    max-width: 250px;
+    max-width: 280px;
     border: 1px solid #DBAD39;
     border-radius: 10px;
     position: relative;
@@ -10,8 +9,13 @@
 }
 .foto {
     width: 100%;
-    height: 100%;
+    height: 200px;
     border-radius: 10px 10px 0px 0px;
+}
+
+.categoria {
+    color: #DBAD39;
+    font-size: small;
 }
 .areaTxt {
     padding: 10px;
@@ -21,5 +25,6 @@
 .preco {
     position: absolute;
     right: 15px;
+    bottom: 10px;
     font-weight: bold;
 }
