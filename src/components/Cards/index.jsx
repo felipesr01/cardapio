@@ -10,7 +10,7 @@ const Card = ({nome, categoria, preco, descricao, imagem}) => {
                 <h3 className={styles.nome}>{nome}</h3>
                 <p className={styles.categoria}>{categoria}</p>
                 <p className={styles.descricao}>{descricao}</p>
-                <span className={styles.preco}>R${preco}</span>
+                <span className={styles.preco}>R${preco.toFixed(2)}</span>
             </div>
         </div>
     )
