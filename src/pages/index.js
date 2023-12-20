@@ -13,6 +13,13 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
 
+  const [listaPratos, setListaPratos] = useState(produtos)
+
+  const handleFiltrarPratosCategoria = (categoria) => {
+    setListaPratos(
+      produtos.filter((prato) => prato.categoria === categoria)
+    )
+  }
 
   return (
     <>
@@ -26,11 +33,14 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins&display=swap" rel="stylesheet"/>
       </Head>
       <Banner />
-      <Categorias />
+      <button onClick={() => handleFiltrarPratosCategoria("Entradas")}>Teste</button>
+      <Categorias 
+        entradas= "Entradas"
+        />
       <CampoDeBusca />
       <h2 className={styles.subtitulo}>Cardápio</h2>
       <div className={styles.containerCards}>
-        {produtos.map((prato) => (
+        {listaPratos.map((prato) => (
           <Card
             imagem={prato.imagem}
             nome={prato.nome}
