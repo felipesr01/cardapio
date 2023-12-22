@@ -14,10 +14,24 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
 
   const [listaPratos, setListaPratos] = useState(produtos)
+  const [textoBusca, setTextoBusca] = useState("")
 
   const handleFiltrarPratosCategoria = (categoria) => {
     setListaPratos(
       produtos.filter((prato) => prato.categoria === categoria)
+    );
+    setTextoBusca("");
+  }
+
+  const handleBuscarPrato = (textoDigitado) => {
+    setTextoBusca(textoDigitado)
+    setListaPratos(
+      produtos.filter(
+        (prato) =>
+          prato.nome.toLowerCase().includes(textoDigitado.toLowerCase()) ||
+          prato.categoria.toLowerCase().includes(textoDigitado.toLowerCase()) ||
+          prato.descricao.toLowerCase().includes(textoDigitado.toLowerCase())
+      )
     )
   }
 
@@ -33,11 +47,10 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins&display=swap" rel="stylesheet"/>
       </Head>
       <Banner />
-      <button onClick={() => handleFiltrarPratosCategoria("Entradas")}>Teste</button>
       <Categorias 
-        entradas= "Entradas"
+        onFiltrarPratosCategorias={handleFiltrarPratosCategoria}
         />
-      <CampoDeBusca />
+      <CampoDeBusca filtrarPratosTexto={handleBuscarPrato} />
       <h2 className={styles.subtitulo}>Cardápio</h2>
       <div className={styles.containerCards}>
         {listaPratos.map((prato) => (
