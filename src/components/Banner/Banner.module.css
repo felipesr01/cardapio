@@ -23,3 +23,15 @@
     font-family: 'Dancing Script', cursive;
     color: #FFDE59;
 }
+
+@media screen and (min-width:768px) {
+    .container {
+        max-width: 400px;
+    }
+    .titulo {
+        font-size: 4em;
+    }
+    .subtitulo {
+        font-size: 20px;
+    }
+}
